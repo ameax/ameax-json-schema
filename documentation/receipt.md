@@ -8,7 +8,61 @@
 #### **Schema Version:** `1.0`
 
 **Example JSON:**
-```json {examples/ameax_organization.json}
+```json
+{
+  "meta": {
+    "document_type": "ameax_receipt",
+    "schema_version": "1.0"
+  },
+  "type": "invoice",
+  "identifiers": {
+    "receipt_number": "INV-2025-001",
+    "external_id": "X234"
+  },
+  "business_id": 1,
+  "user_external_id": "JD",
+  "date": "2025-02-01",
+  "customer_number": "12345",
+  "status": "completed",
+  "tax_mode": "net",
+  "tax_type": "regular",
+  "subject": "Your order No. 12345",
+  "closure": "Thank you for your order. Our general terms and conditions apply.",
+  "notice": "Prio-A Customer",
+  "related_receipts": [
+    { "type": "credit_note", "receipt_number": "CN-2025-002" },
+    { "type": "invoice", "external_id": "X456" }
+  ],
+  "pursued_from": { "type": "order", "receipt_number": "ORD-2024-099" },
+  "line_items": [
+    {
+      "article_number": "ART-001",
+      "category": "Consulting",
+      "description": "Consulting Services",
+      "quantity": 1,
+      "price": 200,
+      "discount": 20,
+      "discount_type": "percent",
+      "tax_rate": 19.0,
+      "tax_type": "regular"
+    },
+    {
+      "article_number": "ART-002",
+      "category": "Book",
+      "description": "Book",
+      "quantity": 2,
+      "price": 20,
+      "discount": 0.5,
+      "discount_type": "amount",
+      "tax_rate": 7.0,
+      "tax_type": "reduced"
+    }
+  ],
+  "custom_data": {
+    "source_of_order": "shop",
+    "what_ever": "x12"
+  }
+}
 ```
 
 ---
@@ -21,7 +75,9 @@
 
 #### **2. Basic Information**
 - **`type`** *(required, string)*: The type of receipt (e.g., invoice, order, offer).
-- **`receipt_number`** *(required, string)*: A unique identifier assigned to the receipt.
+- **`identifiers`** *(required, object)*: Contains unique identifiers for the receipt.
+    - **`receipt_number`** *(required, string)*: A unique identifier assigned to the receipt.
+    - **`external_id`** *(nullable, string)*: An optional external reference ID.
 - **`business_id`** *(nullable, integer)*: Identifier for the business entity handling the receipt.
 - **`user_external_id`** *(nullable, string)*: External identifier of the user processing the receipt.
 - **`date`** *(required, string, YYYY-MM-DD format)*: Date of the receipt creation.
@@ -30,12 +86,22 @@
 - **`tax_mode`** *(required, string, allowed values: net, gross)*: Defines whether prices include tax or not.
 - **`tax_type`** *(required, string, allowed values: regular, reduced, exempt)*: Specifies the applicable tax type.
 
-#### **3. Content Details**
+
+#### **3. Receipt Relations** *(nullable, object)*
+- **`related_receipts`** *(nullable, array of objects)*: List of related receipts. Each related receipt must contain:
+    - **`type`** *(required, string)*: Type of the related receipt (e.g., invoice, credit_note).
+    - **`receipt_number`** *(nullable, string)*: The receipt number, if available.
+    - **`external_id`** *(nullable, string)*: External identifier of the receipt, if applicable.
+- **`pursued_from`** *(nullable, object)*: The receipt that preceded this one, containing:
+    - **`type`** *(required, string)*: Type of the related receipt (e.g., order, quote).
+    - **`receipt_number`** *(required, string)*: The receipt number of the pursued document.
+
+#### **4. Content Details**
 - **`subject`** *(nullable, string)*: The main subject of the receipt.
 - **`closure`** *(nullable, string)*: Additional closing remarks on the receipt.
 - **`notice`** *(nullable, string)*: Any internal or external notices related to the receipt.
 
-#### **4. Line Items (`line_items`)** *(required, array of objects)*
+#### **5. Line Items (`line_items`)** *(required, array of objects)*
 Each item in the receipt includes:
 
 - **`article_number`** *(nullable, string)*: The unique identifier of the product or service.
@@ -48,11 +114,10 @@ Each item in the receipt includes:
 - **`tax_rate`** *(required, float)*: The applicable tax percentage.
 - **`tax_type`** *(required, string, allowed values: regular, reduced, exempt)*: The type of tax applied to the item.
 
-#### **5. Custom Data (`custom_data`)** *(nullable, object)*
+#### **6. Custom Data (`custom_data`)** *(nullable, object)*
 This section allows for additional data fields that may be required for specific use cases.
 
 - **`source_of_order`** *(nullable, string)*: Indicates the origin of the order (e.g., shop, marketplace, manual entry).
 - **`what_ever`** *(nullable, string)*: Example of a custom data field for flexible extensions.
 
 This structured format ensures a standardized way of handling business documents within the system.
-

@@ -4,7 +4,10 @@
     "schema_version": "1.0"
   },
   "type": "invoice",
-  "receipt_number": "INV-2025-001",
+  "identifiers": {
+    "receipt_number": "INV-2025-001",
+    "external_id": "X234"
+  },
   "business_id": 1,
   "user_external_id": "JD",
   "date": "2025-02-01",
@@ -15,6 +18,11 @@
   "subject": "Your order No. 12345",
   "closure": "Thank you for your order. Our general terms and conditions apply.",
   "notice": "Prio-A Customer",
+  "related_receipts": [
+    { "type": "credit_note", "receipt_number": "CN-2025-002" },
+    { "type": "invoice", "external_id": "X456" }
+  ],
+  "pursued_from": { "type": "order", "receipt_number": "ORD-2024-099" },
   "line_items": [
     {
       "article_number": "ART-001",
@@ -41,6 +49,6 @@
   ],
   "custom_data": {
     "source_of_order": "shop",
-	"what_ever": "x12"
+    "what_ever": "x12"
   }
 }
