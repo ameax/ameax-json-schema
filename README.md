@@ -75,7 +75,7 @@ The first step in processing any file is validation against a JSON Schema. The s
 Example validation using `ajv-cli`:
 
 ```bash
-ajv validate -s organization_schema.json -d organization.json
+ajv validate -s ameax_organization_account.v1-0.schema.json -d organization.json
 ```
 
 ---
