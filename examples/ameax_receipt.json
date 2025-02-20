@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "document_type": "ameax_receipt",
+    "schema_version": "1.0"
+  },
+  "type": "invoice",
+  "receipt_number": "INV-2025-001",
+  "business_id": 1,
+  "user_external_id": "JD",
+  "date": "2025-02-01",
+  "customer_number": "12345",
+  "status": "completed",
+  "tax_mode": "net",
+  "tax_type": "regular",
+  "subject": "Your order No. 12345",
+  "closure": "Thank you for your order. Our general terms and conditions apply.",
+  "notice": "Prio-A Customer",
+  "line_items": [
+    {
+      "article_number": "ART-001",
+      "category": "Consulting",
+      "description": "Consulting Services",
+      "quantity": 1,
+      "price": 200,
+      "discount": 20,
+      "discount_type": "percent",
+      "tax_rate": 19.0,
+      "tax_type": "regular"
+    },
+    {
+      "article_number": "ART-002",
+      "category": "Book",
+      "description": "Book",
+      "quantity": 2,
+      "price": 20,
+      "discount": 0.5,
+      "discount_type": "amount",
+      "tax_rate": 7.0,
+      "tax_type": "reduced"
+    }
+  ],
+  "custom_data": {
+    "source_of_order": "shop",
+	"what_ever": "x12"
+  }
+}

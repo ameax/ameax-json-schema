@@ -1,0 +1,77 @@
+# ameax Organization Exchange Format
+
+## Example File
+[View Example File](../examples/ameax_organization.json)
+
+
+### **JSON Structure: Organization (Company)**
+
+#### **Schema Version:** `1.0`
+
+**Example JSON:**
+```json
+{
+  "meta": {
+    "document_type": "ameax_organization_account",
+    "schema_version": "1.0"
+  },
+  "name": "Example GmbH",
+  "additional_name": "Example Solutions",
+  "identifiers": {
+    "customer_number": "12345",
+    "external_id": "X234"
+  },
+  "address": {
+    "route": "Musterstraße",
+    "house_number": "12a",
+    "postal_code": "12345",
+    "locality": "Berlin",
+    "country": "DE"
+  },
+  "social_media": {
+    "web": "https://example.com"
+  },
+  "communications": {
+    "phone_number": "+49 30 123456",
+    "mobile_phone": "+49 170 654321",
+    "email": "info@example.com",
+    "fax": "+49 30 654321"
+  },
+  "business_information": {
+    "vat_id": "DE123456789",
+    "iban": "DE123456789123465798"
+  },
+  "custom_data": {
+    "customer_segment": "Premium",
+    "notes": "Important client",
+    "xcu_category": 5
+  },
+  "contacts": [
+    {
+      "salutation": "Mr.",
+      "honorifics": "Dr.",
+      "firstname": "John",
+      "lastname": "Doe",
+      "identifiers": {
+        "external_id": "789456"
+      },
+      "date_of_birth": "1980-05-12",
+      "employment": {
+        "job_title": "CEO",
+        "department": "Management"
+      },
+      "communications": {
+        "phone_number": "+49 30 987654",
+        "mobile_phone": "+49 151 12345678",
+        "email": "john.doe@example.com",
+        "fax": "+49 30 765432"
+      },
+      "custom_data": {
+        "linkedin": "https://linkedin.com/in/johndoe"
+      }
+    }
+  ]
+}
+```
+
+---

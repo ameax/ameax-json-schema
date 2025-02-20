@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "document_type": "ameax_private_person_account",
+    "schema_version": "1.0"
+  },
+  "salutation": "Mr.",
+  "honorifics": "Dr.",
+  "firstname": "John",
+  "lastname": "Doe",
+  "date_of_birth": "1980-05-12",
+  "identifiers": {
+    "customer_number": "123456"
+  },
+  "address": {
+    "route": "Musterstraße",
+    "house_number": "12a",
+    "postal_code": "12345",
+    "locality": "Berlin",
+    "country": "DE"
+  },
+  "communications": {
+    "phone_number": "+49 30 987654",
+    "mobile_phone": "+49 151 12345678",
+    "email": "john.doe@example.com",
+    "fax": "+49 30 765432"
+  },
+  "custom_data": {
+    "what_ever": "5"
+  }
+}
