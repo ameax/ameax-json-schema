@@ -75,3 +75,81 @@
 ```
 
 ---
+
+### **Explanation of JSON Structure**
+
+#### **1. Meta Information (`meta`)** *(required, object)*
+
+- **`document_type`** *(required, string)*: Specifies the type of document. In this case, `ameax_organization_account` represents an organization.
+- **`schema_version`** *(required, string)*: Defines the version of the schema being used.
+
+#### **2. Basic Information**
+
+- **`name`** *(required, string)*: The official name of the company.
+- **`additional_name`** *(nullable, string)*: An alternative or subsidiary name used by the company.
+
+#### **3. Identifiers** *(nullable, object)*
+- **`customer_number`** *(nullable, string)*: A unique identifier assigned to the customer within the system e.g. debtor number. This one is used to assign receipts to the customer.
+- **`external_id`** *(nullable, string)*: An optional external reference ID to identify the record on future data updates.
+
+#### **4. Address** *(required, object)*
+
+- **`route`** *(nullable, string)*: The street name. Can also be route with house_number
+- **`house_number`** *(nullable, string)*: The house or building number.
+- **`postal_code`** *(required, string)*: ZIP or postal code of the location.
+- **`locality`** *(required, string)*: City or town.
+- **`country`** *(required, string, ISO 3166-1 alpha-2)*: Country code in ISO 3166-1 alpha-2 format.
+
+#### **5. Social Media (`social_media`)** *(nullable, object)*
+
+- **`web`** *(nullable, string, URL)*: The company’s website URL.
+
+#### **6. Communications (`communications`)** *(nullable, object)*
+
+- **`phone_number`** *(nullable, string)*: The main phone number.
+- **`mobile_phone`** *(nullable, string)*: A mobile contact number.
+- **`email`** *(nullable, string, valid email)*: Primary email address of the business like info@example.com.
+- **`fax`** *(nullable, string)*: Fax number (if applicable).
+
+#### **7. Business Information (`business_information`)** *(nullable, object)*
+
+- **`vat_id`** *(nullable, string, VAT format)*: VAT Identification number, applicable for tax purposes.
+- **`iban`** *(nullable, string, IBAN format)*: International Bank Account Number for financial transactions.
+
+#### **8. Custom Data (`custom_data`)** *(nullable, object)*
+
+You can add any data here that's not covered by the structure. The custom data is handled individually via plugins.
+
+- **`customer_segment`** *(nullable, string)*: Classification of the customer (e.g., Premium, Standard).
+- **`notes`** *(nullable, string)*: Any additional information or remarks about the customer.
+- **`xcu_category`** *(nullable, integer)*: A custom categorization field.
+
+#### **9. Contacts (`contacts`)** *(nullable, array of objects)*
+
+Each contact within the company contains the following fields:
+
+- **`salutation`** *(nullable, string)*: Title describing the gender. Used to address the person (Allowed values: Mr., Ms., Mx.)
+- **`honorifics`** *(nullable, string)*: Additional academic or professional titles (e.g., Dr., Prof.).
+- **`firstname`** *(nullable, string)*: First name of the contact.
+- **`lastname`** *(required, string)*: Last name of the contact.
+- **`identifiers.external_id`** *(nullable, string)*: Optional unique ID for the contact to identify the record on updates.
+- **`date_of_birth`** *(nullable, string, YYYY-MM-DD format)*: The birthdate of the contact.
+- **`employment.job_title`** *(nullable, string)*: The job title of the contact within the company.
+- **`employment.department`** *(nullable, string)*: The department where the contact works.
+
+##### **Contact Communications (`communications`)** *(nullable, object)*
+
+- **`phone_number`** *(nullable, string)*: Office phone number of the contact.
+- **`mobile_phone`** *(nullable, string)*: Personal mobile number.
+- **`email`** *(nullable, string, valid email format)*: Contact email address.
+- **`fax`** *(nullable, string)*: Fax number if available.
+
+##### **Contact Custom Data (`custom_data`)** *(nullable, object)*
+
+You can add any data to the contact here. It will be handled via plugin on import
+
+- **`linkedin`** *(nullable, string, URL)*: URL of the LinkedIn profile of the contact.
+
+
+This structured format ensures a standardized way of handling customer data within the system.
+
