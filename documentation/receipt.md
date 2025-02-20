@@ -3,6 +3,9 @@
 ## Example File
 [View Example File](../examples/ameax_receipt.json)
 
+## JSON Schema for validation
+[View Schema File](../schemas/ameax_organization_account.v1-0.schema.json)
+
 ### **JSON Structure: Receipt**
 
 #### **Schema Version:** `1.0`

@@ -1,4 +1,4 @@
-### **API Documentation: ameax Data Exchange Format**
+### **API Documentation: ameax JSON Exchange Format**
 
 #### **Introduction**
 
@@ -19,7 +19,7 @@ Data can be transferred via **Webhook** for instant processing or via **FTP/S** 
 To send data via Webhook, make a `POST` request to:
 
 ```plaintext
-https://{replace_with_your_database_name}.ameax.de/rest-api/json-import
+https://{replace_with_your_database_name}.ameax.de/rest-api/imports/json
 ```
 
 **Headers:**
@@ -30,7 +30,7 @@ https://{replace_with_your_database_name}.ameax.de/rest-api/json-import
 **Example Request:**
 
 ```bash
-curl -X POST https://{replace_with_your_database_name}.ameax.de/rest-api/json-import \
+curl -X POST https://{replace_with_your_database_name}.ameax.de/rest-api/imports/json \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer YOUR_API_KEY" \
      -d @organization.json
@@ -46,8 +46,8 @@ Customers may also upload JSON files via FTP/TLS. Processing starts a few minute
 
 **FTP/S Server Details:**
 
-- **Host:** `ftpupload.aranes.de`
-- **Port:** `21` (Explicit TLS) / `990` (Implicit TLS)
+- **Host:** Provided upon request
+- **Port:** `21` (Explicit TLS)
 - **Username/Password:** Provided upon request
 - **Directory Structure:**
     - `/incoming/` → Upload new files
@@ -70,13 +70,7 @@ lftp -e "set ftp:ssl-force true; open ftp.example.com; user your_username your_p
 
 ### **JSON Schema Validation**
 
-The first step in processing any file is validation against a JSON Schema. The schema file will be available in the GitHub repository.
-
-Example validation using `ajv-cli`:
-
-```bash
-ajv validate -s ameax_organization_account.v1-0.schema.json -d organization.json
-```
+The first step in processing any file is validation against a JSON Schema. The schema files are available in the schemas directory in this GitHub repository.
 
 ---
 

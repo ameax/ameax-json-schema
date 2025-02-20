@@ -10,7 +10,7 @@
       },
       "required": ["document_type", "schema_version"]
     },
-    "type": { "type": "string" },
+    "type": { "type": "string", "enum": ["offer", "order", "invoice", "credit_note", "cancellation_document"] },
     "identifiers": {
       "type": "object",
       "properties": {
@@ -23,7 +23,7 @@
     "user_external_id": { "type": ["string", "null"] },
     "date": { "type": "string", "format": "date" },
     "customer_number": { "type": "string" },
-    "status": { "type": "string", "enum": ["draft", "pending", "completed", "canceled"] },
+    "status": { "type": "string", "enum": ["draft", "pending", "completed", "cancelled"] },
     "tax_mode": { "type": "string", "enum": ["net", "gross"] },
     "tax_type": { "type": "string", "enum": ["regular", "reduced", "exempt"] },
     "subject": { "type": ["string", "null"] },
@@ -38,16 +38,25 @@
           "receipt_number": { "type": ["string", "null"] },
           "external_id": { "type": ["string", "null"] }
         },
-        "required": ["type"]
+        "required": ["type"],
+        "anyOf": [
+          { "required": ["receipt_number"]},
+          { "required": ["external_id"]}
+        ]
       }
     },
     "pursued_from": {
       "type": ["object", "null"],
       "properties": {
         "type": { "type": "string" },
-        "receipt_number": { "type": "string" }
+        "receipt_number": { "type": ["string", "null"] },
+        "external_id": { "type": ["string", "null"] }
       },
-      "required": ["type", "receipt_number"]
+      "required": ["type", "receipt_number"],
+      "anyOf": [
+        { "required": ["receipt_number"]},
+        { "required": ["external_id"]}
+      ]
     },
     "line_items": {
       "type": "array",

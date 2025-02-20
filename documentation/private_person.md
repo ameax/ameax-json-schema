@@ -3,6 +3,10 @@
 ## Example File
 [View Example File](../examples/ameax_private_person.json)
 
+
+## JSON Schema for validation
+[View Schema File](../schemas/ameax_private_person_account.v1-0.schema.json)
+
 ### **JSON Structure: Private Person**
 
 #### **Schema Version:** `1.0`
