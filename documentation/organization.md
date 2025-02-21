@@ -11,6 +11,7 @@
 #### **Schema Version:** `1.0`
 
 **Example JSON:**
+
 ```json
 {
   "meta": {
@@ -42,6 +43,9 @@
   "business_information": {
     "vat_id": "DE123456789",
     "iban": "DE123456789123465798"
+  },
+  "agent": {
+    "external_id": "ms"
   },
   "custom_data": {
     "customer_segment": "Premium",
@@ -118,7 +122,10 @@
 - **`vat_id`** *(nullable, string, VAT format)*: VAT Identification number, applicable for tax purposes.
 - **`iban`** *(nullable, string, IBAN format)*: International Bank Account Number for financial transactions.
 
-#### **8. Custom Data (`custom_data`)** *(nullable, object)*
+#### **8. Agent (`agent`)** *(nullable, object)*
+- **`external_id`** *(nullable, string)*: An external reference ID to assign the agent in ameax.
+
+#### **9. Custom Data (`custom_data`)** *(nullable, object)*
 
 You can add any data here that's not covered by the structure. The custom data is handled individually via plugins.
 
@@ -126,7 +133,7 @@ You can add any data here that's not covered by the structure. The custom data i
 - **`notes`** *(nullable, string)*: Any additional information or remarks about the customer.
 - **`xcu_category`** *(nullable, integer)*: A custom categorization field.
 
-#### **9. Contacts (`contacts`)** *(nullable, array of objects)*
+#### **10. Contacts (`contacts`)** *(nullable, array of objects)*
 
 Each contact within the company contains the following fields:
 

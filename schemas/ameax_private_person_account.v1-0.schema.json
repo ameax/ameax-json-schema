@@ -41,10 +41,17 @@
         "fax": { "type": ["string", "null"] }
       }
     },
+    "agent": {
+      "type": ["object"],
+      "properties": {
+        "external_id": { "type": ["string", "null"] }
+      }
+    },
     "custom_data": {
       "type": ["object", "null"],
       "additionalProperties": true
     }
   },
-  "required": ["meta", "firstname", "lastname", "address"]
+  "required": ["meta", "firstname", "lastname", "address"],
+  "additionalProperties": false
 }

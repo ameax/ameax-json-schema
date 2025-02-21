@@ -52,6 +52,12 @@
         "iban": { "type": ["string", "null"] }
       }
     },
+    "agent": {
+      "type": ["object", "null"],
+      "properties": {
+        "external_id": { "type": ["string", "null"] }
+      }
+    },
     "custom_data": {
       "type": ["object", "null"],
       "additionalProperties": true

@@ -39,6 +39,9 @@
     "email": "john.doe@example.com",
     "fax": "+49 30 765432"
   },
+  "agent": {
+    "external_id": "ms"
+  },
   "custom_data": {
     "what_ever": "5"
   }
@@ -80,7 +83,10 @@
 - **`email`** *(nullable, string, valid email format)*: Primary email address.
 - **`fax`** *(nullable, string)*: Fax number (if applicable).
 
-#### **6. Custom Data (`custom_data`)** *(nullable, object)*
+#### **6. Agent (`agent`)** *(nullable, object)*
+- **`external_id`** *(nullable, string)*: An external reference ID to assign the agent in ameax.
+
+#### **7. Custom Data (`custom_data`)** *(nullable, object)*
 
 You can add any additional data that is not covered by the predefined structure. The custom data is handled individually via plugins.
 

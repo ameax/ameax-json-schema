@@ -29,6 +29,9 @@
     "vat_id": "DE123456789",
     "iban": "DE123456789123465798"
   },
+  "agent": {
+    "external_id": "ms"
+  },
   "custom_data": {
     "customer_segment": "Premium",
     "notes": "Important client",

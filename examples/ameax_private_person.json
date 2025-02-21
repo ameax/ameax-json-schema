@@ -24,6 +24,9 @@
     "email": "john.doe@example.com",
     "fax": "+49 30 765432"
   },
+  "agent": {
+    "external_id": "ms"
+  },
   "custom_data": {
     "what_ever": "5"
   }
