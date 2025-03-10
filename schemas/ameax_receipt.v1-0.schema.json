@@ -6,7 +6,11 @@
       "type": "object",
       "properties": {
         "document_type": { "type": "string", "enum": ["ameax_receipt"] },
-        "schema_version": { "type": "string" }
+        "schema_version": { "type": "string" },
+        "import_status": {
+          "type": "object",
+          "additionalProperties": true
+        }
       },
       "required": ["document_type", "schema_version"]
     },
