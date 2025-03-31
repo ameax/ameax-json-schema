@@ -2,11 +2,12 @@
 
 #### **Introduction**
 
-This documentation describes the JSON format for exchanging customer data. There are three types of data structures:
+This documentation describes the JSON format for exchanging customer data. There are four types of data structures:
 
 1. **Organizations** (with contacts)
 2. **Private persons**
 3. **Receipts** (invoices, offers, orders, etc.)
+4. **Sales** (sales opportunities)
 
 Data can be transferred via **Webhook** for instant processing or via **FTP/S** for slightly delayed processing. Processing is always handled in a queue-based system to ensure scalability.
 
@@ -67,6 +68,7 @@ lftp -e "set ftp:ssl-force true; open ftp.example.com; user your_username your_p
 - [Organization](documentation/organization.md)
 - [Private person](documentation/private_person.md)
 - [Receipt](documentation/receipt.md)
+- [Sale](documentation/sale.md)
 
 ### **JSON Schema Validation**
 

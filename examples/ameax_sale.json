@@ -1,0 +1,56 @@
+{
+    "meta": {
+      "document_type": "ameax_sale",
+      "schema_version": "1.0"
+    },
+    "identifiers": {
+      "external_id": "S234"
+    },
+    "customer": {
+      "customer_number": "12345",
+      "external_id": "X234"
+    },
+    "subject": "Opportunity 12345",
+    "description": "Description of the opportunity",
+    "sale_status": "active",
+    "selling_status": "identification",
+    "user_external_id": "JD",
+    "date": "2025-02-01",
+    "amount": 1000.00,
+    "probability": 50,
+    "close_date": "2025-07-01",
+    "rating": {
+      "relationship": {
+        "rating": 4,
+        "source": "known"
+      },
+      "proposition": {
+        "rating": 3,
+        "source": "assumed"
+      },
+      "trust": {
+        "rating": 5,
+        "source": "known"
+      },
+      "competition": {
+        "rating": 2,
+        "source": "guessed"
+      },
+      "need_for_action": {
+        "rating": 4,
+        "source": "known"
+      },
+      "buying_process": {
+        "rating": 3,
+        "source": "assumed"
+      },
+      "price": {
+        "rating": 4,
+        "source": "known"
+      }
+    },
+    "custom_data": {
+      "xsa_category": "industry",
+      "what_ever": "x12"
+    }
+  } 
