@@ -20,7 +20,7 @@ Data can be transferred via **Webhook** for instant processing or via **FTP/S** 
 To send data via Webhook, make a `POST` request to:
 
 ```plaintext
-https://{replace_with_your_database_name}.ameax.de/rest-api/imports/json
+https://{replace_with_your_database_name}.ameax.de/rest-api/imports
 ```
 
 **Headers:**
@@ -32,7 +32,7 @@ https://{replace_with_your_database_name}.ameax.de/rest-api/imports/json
 
 ```bash
 curl -X POST https://{replace_with_your_database_name}.ameax.de/rest-api/imports \
-     -H "Content-Type: application/json" \
+     -H "Accept: application/json" \
      -H "Authorization: Bearer YOUR_API_KEY" \
      -d @organization.json
 ```
