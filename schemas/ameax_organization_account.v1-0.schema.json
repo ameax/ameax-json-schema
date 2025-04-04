@@ -19,8 +19,8 @@
     "identifiers": {
       "type": "object",
       "properties": {
-        "customer_number": { "type": "string" },
-        "external_id": { "type": ["string", "null"] }
+        "customer_number": { "type": ["string", "integer"] },
+        "external_id": { "type": ["string", "integer", "null"] }
       }
     },
     "address": {
@@ -37,7 +37,7 @@
     "social_media": {
       "type": ["object", "null"],
       "properties": {
-        "web": { "type": ["string", "null"], "format": "uri" }
+        "web": { "type": ["string", "null"] }
       }
     },
     "communications": {
@@ -59,7 +59,7 @@
     "agent": {
       "type": ["object", "null"],
       "properties": {
-        "external_id": { "type": ["string", "null"] }
+        "external_id": { "type": ["string", "integer", "null"] }
       }
     },
     "custom_data": {

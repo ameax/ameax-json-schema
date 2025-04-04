@@ -29,7 +29,7 @@
     "customer_number": { "type": "string" },
     "status": { "type": "string", "enum": ["draft", "pending", "completed", "cancelled"] },
     "tax_mode": { "type": "string", "enum": ["net", "gross"] },
-    "tax_type": { "type": "string", "enum": ["regular", "reduced", "exempt"] },
+    "tax_type": { "type": "string", "enum": ["regular", "reduced", "exempt_eu", "exempt_third", "exempt_other"] },
     "subject": { "type": ["string", "null"] },
     "closure": { "type": ["string", "null"] },
     "notice": { "type": ["string", "null"] },
