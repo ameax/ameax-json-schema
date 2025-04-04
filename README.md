@@ -52,7 +52,8 @@ Customers may also upload JSON files via FTP/TLS. Processing starts a few minute
 - **Username/Password:** Provided upon request
 - **Directory Structure:**
     - `/incoming/` → Upload new files
-    - `/processed/` → Successfully processed files
+    - `/pending/` → Files queued for processing
+    - `/success/` → Successfully processed files
     - `/failed/` → Files that failed validation
 
 **Example Upload via FTP/TLS:**
