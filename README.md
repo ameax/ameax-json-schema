@@ -31,7 +31,7 @@ https://{replace_with_your_database_name}.ameax.de/rest-api/imports/json
 **Example Request:**
 
 ```bash
-curl -X POST https://{replace_with_your_database_name}.ameax.de/rest-api/imports/json \
+curl -X POST https://{replace_with_your_database_name}.ameax.de/rest-api/imports \
      -H "Content-Type: application/json" \
      -H "Authorization: Bearer YOUR_API_KEY" \
      -d @organization.json
