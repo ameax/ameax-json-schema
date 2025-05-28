@@ -6,7 +6,8 @@
   "type": "invoice",
   "identifiers": {
     "receipt_number": "INV-2025-001",
-    "external_id": "X234"
+    "external_id": "X234",
+    "ameax_internal_id": 321654
   },
   "business_id": 1,
   "user_external_id": "JD",

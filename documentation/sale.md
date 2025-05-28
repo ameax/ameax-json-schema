@@ -18,7 +18,8 @@
     "schema_version": "1.0"
   },
   "identifiers": {
-    "external_id": "S234"
+    "external_id": "S234",
+    "ameax_internal_id": 147258
   },
   "customer": {
     "customer_number": "12345",
@@ -80,6 +81,7 @@
 
 #### **2. Identifiers** *(required, object)*
 - **`external_id`** *(required, string)*: A unique external identifier for the sales record.
+- **`ameax_internal_id`** *(nullable, integer)*: An internal ameax ID that can be used as an alternative or in addition to external_id.
 
 #### **3. Customer Information** *(required, object)*
 At least one of the following fields must be present:

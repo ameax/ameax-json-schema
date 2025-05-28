@@ -20,7 +20,8 @@
       "type": "object",
       "properties": {
         "customer_number": { "type": ["string", "integer"] },
-        "external_id": { "type": ["string", "integer", "null"] }
+        "external_id": { "type": ["string", "integer", "null"] },
+        "ameax_internal_id": { "type": ["integer", "null"] }
       }
     },
     "address": {
@@ -78,7 +79,8 @@
           "identifiers": {
             "type": "object",
             "properties": {
-              "external_id": { "type": ["string", "null"] }
+              "external_id": { "type": ["string", "null"] },
+              "ameax_internal_id": { "type": ["integer", "null"] }
             }
           },
           "date_of_birth": { "type": ["string", "null"], "format": "date" },

@@ -23,6 +23,9 @@
         "properties": {
           "external_id": {
             "type": "string"
+          },
+          "ameax_internal_id": {
+            "type": ["integer", "null"]
           }
         }
       },

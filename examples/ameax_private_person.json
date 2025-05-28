@@ -9,7 +9,8 @@
   "lastname": "Doe",
   "date_of_birth": "1980-05-12",
   "identifiers": {
-    "customer_number": "123456"
+    "customer_number": "123456",
+    "ameax_internal_id": 987654
   },
   "address": {
     "route": "Musterstraße",

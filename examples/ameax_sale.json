@@ -4,7 +4,8 @@
       "schema_version": "1.0"
     },
     "identifiers": {
-      "external_id": "S234"
+      "external_id": "S234",
+      "ameax_internal_id": 147258
     },
     "customer": {
       "customer_number": "12345",

@@ -7,7 +7,8 @@
   "additional_name": "Example Solutions",
   "identifiers": {
     "customer_number": "12345",
-    "external_id": "X234"
+    "external_id": "X234",
+    "ameax_internal_id": 789123
   },
   "address": {
     "route": "Musterstraße",
@@ -44,7 +45,8 @@
       "firstname": "John",
       "lastname": "Doe",
 	  "identifiers": {
-		"external_id": "789456"
+		"external_id": "789456",
+		"ameax_internal_id": 456789
 	  },
       "date_of_birth": "1980-05-12",
       "employment": {

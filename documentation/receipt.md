@@ -20,7 +20,8 @@
   "type": "invoice",
   "identifiers": {
     "receipt_number": "INV-2025-001",
-    "external_id": "X234"
+    "external_id": "X234",
+    "ameax_internal_id": 321654
   },
   "business_id": 1,
   "user_external_id": "JD",
@@ -81,6 +82,7 @@
 - **`identifiers`** *(required, object)*: Contains unique identifiers for the receipt.
     - **`receipt_number`** *(required, string)*: A unique identifier assigned to the receipt.
     - **`external_id`** *(nullable, string)*: An optional external reference ID.
+    - **`ameax_internal_id`** *(nullable, integer)*: An internal ameax ID that can be used as an alternative or in addition to external_id.
 - **`business_id`** *(nullable, integer)*: Identifier for the business entity handling the receipt.
 - **`user_external_id`** *(nullable, string)*: External identifier of the user processing the receipt.
 - **`date`** *(required, string, YYYY-MM-DD format)*: Date of the receipt creation.

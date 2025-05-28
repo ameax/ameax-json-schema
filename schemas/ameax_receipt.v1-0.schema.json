@@ -19,7 +19,8 @@
       "type": "object",
       "properties": {
         "receipt_number": { "type": "string" },
-        "external_id": { "type": ["string", "null"] }
+        "external_id": { "type": ["string", "null"] },
+        "ameax_internal_id": { "type": ["integer", "null"] }
       },
       "required": ["receipt_number"]
     },

@@ -24,7 +24,8 @@
   "lastname": "Doe",
   "date_of_birth": "1980-05-12",
   "identifiers": {
-    "customer_number": "123456"
+    "customer_number": "123456",
+    "ameax_internal_id": 987654
   },
   "address": {
     "route": "Musterstraße",
@@ -67,6 +68,8 @@
 
 #### **3. Identifiers (`identifiers`)** *(nullable, object)*
 - **`customer_number`** *(nullable, string)*: A unique identifier assigned to the customer within the system, used for assigning receipts.
+- **`external_id`** *(nullable, string)*: An optional external reference ID to identify the record on future data updates.
+- **`ameax_internal_id`** *(nullable, integer)*: An internal ameax ID that can be used as an alternative or in addition to external_id.
 
 #### **4. Address (`address`)** *(required, object)*
 
