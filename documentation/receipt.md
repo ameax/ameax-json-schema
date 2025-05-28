@@ -82,7 +82,7 @@
 - **`identifiers`** *(required, object)*: Contains unique identifiers for the receipt.
     - **`receipt_number`** *(required, string)*: A unique identifier assigned to the receipt.
     - **`external_id`** *(nullable, string)*: An optional external reference ID.
-    - **`ameax_internal_id`** *(nullable, integer)*: An internal ameax ID that can be used as an alternative or in addition to external_id.
+    - **`ameax_internal_id`** *(nullable, integer)*: An internal ameax ID that can be used as an alternative or in addition to external_id. **Note: When both `ameax_internal_id` and `external_id` are provided, `ameax_internal_id` takes precedence for record identification.**
 - **`business_id`** *(nullable, integer)*: Identifier for the business entity handling the receipt.
 - **`user_external_id`** *(nullable, string)*: External identifier of the user processing the receipt.
 - **`date`** *(required, string, YYYY-MM-DD format)*: Date of the receipt creation.

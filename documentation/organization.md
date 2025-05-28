@@ -99,7 +99,7 @@
 #### **3. Identifiers** *(nullable, object)*
 - **`customer_number`** *(nullable, string)*: A unique identifier assigned to the customer within the system e.g. debtor number. This one is used to assign receipts to the customer.
 - **`external_id`** *(nullable, string)*: An optional external reference ID to identify the record on future data updates.
-- **`ameax_internal_id`** *(nullable, integer)*: An internal ameax ID that can be used as an alternative or in addition to external_id.
+- **`ameax_internal_id`** *(nullable, integer)*: An internal ameax ID that can be used as an alternative or in addition to external_id. **Note: When both `ameax_internal_id` and `external_id` are provided, `ameax_internal_id` takes precedence for record identification.**
 
 #### **4. Address** *(required, object)*
 
@@ -145,7 +145,7 @@ Each contact within the company contains the following fields:
 - **`firstname`** *(nullable, string)*: First name of the contact.
 - **`lastname`** *(required, string)*: Last name of the contact.
 - **`identifiers.external_id`** *(nullable, string)*: Optional unique ID for the contact to identify the record on updates.
-- **`identifiers.ameax_internal_id`** *(nullable, integer)*: An internal ameax ID for the contact that can be used as an alternative or in addition to external_id.
+- **`identifiers.ameax_internal_id`** *(nullable, integer)*: An internal ameax ID for the contact that can be used as an alternative or in addition to external_id. **Note: When both `ameax_internal_id` and `external_id` are provided, `ameax_internal_id` takes precedence for record identification.**
 - **`date_of_birth`** *(nullable, string, YYYY-MM-DD format)*: The birthdate of the contact.
 - **`employment.job_title`** *(nullable, string)*: The job title of the contact within the company.
 - **`employment.department`** *(nullable, string)*: The department where the contact works.

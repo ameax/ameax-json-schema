@@ -81,7 +81,7 @@
 
 #### **2. Identifiers** *(required, object)*
 - **`external_id`** *(required, string)*: A unique external identifier for the sales record.
-- **`ameax_internal_id`** *(nullable, integer)*: An internal ameax ID that can be used as an alternative or in addition to external_id.
+- **`ameax_internal_id`** *(nullable, integer)*: An internal ameax ID that can be used as an alternative or in addition to external_id. **Note: When both `ameax_internal_id` and `external_id` are provided, `ameax_internal_id` takes precedence for record identification.**
 
 #### **3. Customer Information** *(required, object)*
 At least one of the following fields must be present:
