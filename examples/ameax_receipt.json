@@ -11,6 +11,7 @@
   },
   "business_id": 1,
   "user_external_id": "JD",
+  "sale_external_id": "OP123",
   "date": "2025-02-01",
   "customer_number": "12345",
   "status": "completed",

@@ -25,6 +25,7 @@
   },
   "business_id": 1,
   "user_external_id": "JD",
+  "sale_external_id": "SALE-2025-042",
   "date": "2025-02-01",
   "customer_number": "12345",
   "status": "completed",
@@ -85,6 +86,7 @@
     - **`ameax_internal_id`** *(nullable, integer)*: An internal ameax ID that can be used as an alternative or in addition to external_id. **Note: When both `ameax_internal_id` and `external_id` are provided, `ameax_internal_id` takes precedence for record identification.**
 - **`business_id`** *(nullable, integer)*: Identifier for the business entity handling the receipt.
 - **`user_external_id`** *(nullable, string)*: External identifier of the user processing the receipt.
+- **`sale_external_id`** *(nullable, string)*: External identifier to link this receipt to a sales opportunity. **Note: When using this field, the corresponding sale record should be synchronized first to ensure proper linkage.**
 - **`date`** *(required, string, YYYY-MM-DD format)*: Date of the receipt creation.
 - **`customer_number`** *(required, string)*: Customer identifier to link the receipt to a specific customer.
 - **`status`** *(required, string, allowed values: draft, pending, completed, canceled)*: Current status of the receipt.

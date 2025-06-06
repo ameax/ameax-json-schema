@@ -26,6 +26,7 @@
     },
     "business_id": { "type": ["integer", "null"] },
     "user_external_id": { "type": ["string", "null"] },
+    "sale_external_id": { "type": ["string", "null"] },
     "date": { "type": "string", "format": "date" },
     "customer_number": { "type": "string" },
     "status": { "type": "string", "enum": ["draft", "pending", "completed", "cancelled"] },
