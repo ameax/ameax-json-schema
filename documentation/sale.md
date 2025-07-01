@@ -92,7 +92,7 @@ At least one of the following fields must be present:
 - **`subject`** *(required, string)*: Title or subject of the sales opportunity
 - **`description`** *(nullable, string)*: Detailed description of the opportunity
 - **`sale_status`** *(required, string)*: Current status of the sale
-  - Allowed values: "active", "inactive", "completed", "cancelled"
+  - Allowed values: "active", "inactive", "~~completed~~", "cancelled","terminated","lost","won"
 - **`selling_status`** *(required, string)*: Current stage in the sales process
   - Allowed values: "identification", "acquisition", "qualification", "proposal", "sale"
 - **`user_external_id`** *(required, string)*: External identifier of the responsible user
@@ -100,6 +100,7 @@ At least one of the following fields must be present:
 - **`amount`** *(required, number)*: Expected sales amount (decimal with 2 decimal places)
 - **`probability`** *(required, integer)*: Probability of closing the sale (0-100)
 - **`close_date`** *(required, string, YYYY-MM-DD format)*: Expected closing date
+> 💡 **Note:** The value "completed" is deprecated and functionally identical to `won`. It will be removed in a future version.
 
 #### **5. Rating System** *(required, object)*
 The rating system contains evaluations for various aspects of the sales opportunity. Each rating consists of:
