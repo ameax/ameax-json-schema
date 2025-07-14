@@ -136,6 +136,26 @@ You can add any data here that's not covered by the structure. The custom data i
 - **`notes`** *(nullable, string)*: Any additional information or remarks about the customer.
 - **`xcu_category`** *(nullable, integer)*: A custom categorization field.
 
+##### **Custom Fieldlib Fields (xcu_ prefix)**
+
+Fields with the `xcu_` prefix are dynamically handled by the legacy system as custom customer fields:
+
+- Fields must start with `xcu_` to be processed as fieldlib fields
+- These fields are extracted during import and sent to the legacy API
+- Available fields depend on the legacy AM system configuration
+- Field types and validation are handled by the legacy system
+- Non-prefixed fields remain in custom_data but are not processed as fieldlib fields
+
+Example:
+```json
+"custom_data": {
+  "xcu_category": 5,
+  "xcu_kundenart": "wholesale",
+  "xcu_rabattsatz": 10.5,
+  "other_field": "ignored"  // non-xcu_ fields are ignored
+}
+```
+
 #### **10. Contacts (`contacts`)** *(nullable, array of objects)*
 
 Each contact within the company contains the following fields:
@@ -162,6 +182,26 @@ Each contact within the company contains the following fields:
 You can add any data to the contact here. It will be handled via plugin on import
 
 - **`linkedin`** *(nullable, string, URL)*: URL of the LinkedIn profile of the contact.
+
+###### **Custom Fieldlib Fields (xpe_ prefix)**
+
+Fields with the `xpe_` prefix are dynamically handled by the legacy system as custom person/contact fields:
+
+- Fields must start with `xpe_` to be processed as fieldlib fields
+- These fields are extracted during import and sent to the legacy API
+- Available fields depend on the legacy AM system configuration
+- Field types and validation are handled by the legacy system
+- Non-prefixed fields remain in custom_data but are not processed as fieldlib fields
+
+Example:
+```json
+"custom_data": {
+  "xpe_employee_id": "EMP001",
+  "xpe_department": "IT",
+  "xpe_cost_center": "CC123",
+  "linkedin": "https://linkedin.com/in/johndoe"  // non-xpe_ field preserved but not processed as fieldlib
+}
+```
 
 
 This structured format ensures a standardized way of handling customer data within the system.

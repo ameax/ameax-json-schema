@@ -139,4 +139,24 @@ This section allows for additional data fields that may be required for specific
 - **`xsa_category`** *(nullable, string)*: Example of a custom categorization field
 - **`what_ever`** *(nullable, string)*: Example of a custom data field for flexible extensions
 
+##### **Custom Fieldlib Fields (xsa_ prefix)**
+
+Fields with the `xsa_` prefix are dynamically handled by the legacy system as custom sale fields:
+
+- Fields must start with `xsa_` to be processed as fieldlib fields
+- These fields are extracted during import and sent to the legacy API
+- Available fields depend on the legacy AM system configuration
+- Field types and validation are handled by the legacy system
+- Non-prefixed fields remain in custom_data but are not processed as fieldlib fields
+
+Example:
+```json
+"custom_data": {
+  "xsa_source": "website",
+  "xsa_campaign": "summer2024",
+  "xsa_referrer": "partner123",
+  "internal_note": "High priority"  // non-xsa_ fields are ignored
+}
+```
+
 This structured format ensures a standardized way of handling sales opportunities within the system. 

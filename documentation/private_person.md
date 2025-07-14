@@ -95,5 +95,25 @@ You can add any additional data that is not covered by the predefined structure.
 
 - **`what_ever`** *(nullable, string)*: Example of a custom data field that can be adjusted based on system needs.
 
+##### **Custom Fieldlib Fields (xcu_ prefix)**
+
+Fields with the `xcu_` prefix are dynamically handled by the legacy system as custom customer fields:
+
+- Fields must start with `xcu_` to be processed as fieldlib fields
+- These fields are extracted during import and sent to the legacy API
+- Available fields depend on the legacy AM system configuration
+- Field types and validation are handled by the legacy system
+- Non-prefixed fields remain in custom_data but are not processed as fieldlib fields
+
+Example:
+```json
+"custom_data": {
+  "xcu_category": 5,
+  "xcu_kundenart": "private",
+  "xcu_newsletter_subscriber": true,
+  "notes": "VIP customer"  // non-xcu_ fields are ignored
+}
+```
+
 This structured format ensures a standardized way of handling private person data within the system.
 
