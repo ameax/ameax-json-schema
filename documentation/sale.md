@@ -64,6 +64,13 @@
       "source": "known"
     }
   },
+  "create_actions": [
+    {
+      "type": "remind",
+      "remind_date": "2025-07-15T10:30:00Z",
+      "subject": "Follow up on proposal discussion"
+    }
+  ],
   "custom_data": {
     "xsa_category": "industry",
     "what_ever": "x12"
@@ -119,7 +126,15 @@ Rating categories:
 - **`buying_process`**: Buying process
 - **`price`**: Price situation
 
-#### **6. Custom Data** *(nullable, object)*
+#### **6. Create Actions** *(nullable, array)*
+This section allows specifying actions to be created when the sale is imported. Currently supports:
+- **`type`** *(required, string)*: Type of action to create. Currently only "remind" is supported.
+- **`remind_date`** *(required for type "remind", string, ISO 8601 date-time format)*: Date and time for the reminder (e.g., "2025-07-15T10:30:00Z")
+- **`subject`** *(required for type "remind", string)*: Subject/description of the reminder
+
+When a "remind" action is included, a reminder will be created for the user assigned to the sale.
+
+#### **7. Custom Data** *(nullable, object)*
 This section allows for additional data fields that may be required for specific use cases.
 - **`xsa_category`** *(nullable, string)*: Example of a custom categorization field
 - **`what_ever`** *(nullable, string)*: Example of a custom data field for flexible extensions

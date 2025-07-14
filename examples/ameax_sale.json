@@ -50,6 +50,13 @@
         "source": "known"
       }
     },
+    "create_actions": [
+      {
+        "type": "remind",
+        "remind_date": "2025-07-15T10:30:00Z",
+        "subject": "Follow up on proposal discussion"
+      }
+    ],
     "custom_data": {
       "xsa_category": "industry",
       "what_ever": "x12"
