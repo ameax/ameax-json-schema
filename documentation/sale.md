@@ -99,7 +99,7 @@ At least one of the following fields must be present:
 - **`date`** *(required, string, YYYY-MM-DD format)*: Date of the sales opportunity
 - **`amount`** *(required, number)*: Expected sales amount (decimal with 2 decimal places)
 - **`probability`** *(required, integer)*: Probability of closing the sale (0-100)
-- **`close_date`** *(required, string, YYYY-MM-DD format)*: Expected closing date
+- **`close_date`** *(nullable, string, YYYY-MM-DD format)*: Expected closing date
 > 💡 **Note:** The value "completed" is deprecated and functionally identical to `won`. It will be removed in a future version.
 
 #### **5. Rating System** *(required, object)*
