@@ -2,7 +2,7 @@
   "meta": {
     "document_type": "ameax_private_person_account",
     "schema_version": "1.0",
-    "import_mode": "create_only"
+    "import_mode": null
   },
   "salutation": "Mr.",
   "honorifics": "Dr.",
