@@ -121,6 +121,7 @@
 #### **6. Communications (`communications`)** *(nullable, object)*
 
 - **`phone_number`** *(nullable, string)*: The main phone number.
+- **`phone_number2`** *(nullable, string)*: A secondary phone number.
 - **`mobile_phone`** *(nullable, string)*: A mobile contact number.
 - **`email`** *(nullable, string, valid email)*: Primary email address of the business like info@example.com.
 - **`fax`** *(nullable, string)*: Fax number (if applicable).
@@ -178,6 +179,7 @@ Each contact within the company contains the following fields:
 ##### **Contact Communications (`communications`)** *(nullable, object)*
 
 - **`phone_number`** *(nullable, string)*: Office phone number of the contact.
+- **`phone_number2`** *(nullable, string)*: Secondary office phone number of the contact.
 - **`mobile_phone`** *(nullable, string)*: Personal mobile number.
 - **`email`** *(nullable, string, valid email format)*: Contact email address.
 - **`fax`** *(nullable, string)*: Fax number if available.

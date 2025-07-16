@@ -51,6 +51,7 @@
       "type": ["object", "null"],
       "properties": {
         "phone_number": { "type": ["string", "null"] },
+        "phone_number2": { "type": ["string", "null"] },
         "mobile_phone": { "type": ["string", "null"] },
         "email": { "type": ["string", "null"], "format": "email" },
         "fax": { "type": ["string", "null"] }
@@ -101,6 +102,7 @@
             "type": ["object", "null"],
             "properties": {
               "phone_number": { "type": ["string", "null"] },
+              "phone_number2": { "type": ["string", "null"] },
               "mobile_phone": { "type": ["string", "null"] },
               "email": { "type": ["string", "null"], "format": "email" },
               "fax": { "type": ["string", "null"] }
