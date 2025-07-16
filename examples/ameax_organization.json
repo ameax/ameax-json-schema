@@ -1,7 +1,8 @@
 {
   "meta": {
     "document_type": "ameax_organization_account",
-    "schema_version": "1.0"
+    "schema_version": "1.0",
+    "import_mode": "create_or_update"
   },
   "name": "Example GmbH",
   "additional_name": "Example Solutions",

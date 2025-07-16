@@ -1,7 +1,8 @@
 {
   "meta": {
     "document_type": "ameax_receipt",
-    "schema_version": "1.0"
+    "schema_version": "1.0",
+    "import_mode": "update_only"
   },
   "type": "invoice",
   "identifiers": {

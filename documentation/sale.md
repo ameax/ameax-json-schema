@@ -85,6 +85,11 @@
 #### **1. Meta Information (`meta`)** *(required, object)*
 - **`document_type`** *(required, string)*: Specifies the type of document. In this case, `ameax_sale` represents a sales opportunity.
 - **`schema_version`** *(required, string)*: Defines the version of the schema being used.
+- **`import_mode`** *(optional, string or null)*: Controls how records are processed during import. Valid values are:
+  - `"create_or_update"` (default): Creates new records or updates existing ones based on identifiers
+  - `"create_only"`: Only creates new records, ignores updates to existing ones
+  - `"update_only"`: Only updates existing records, ignores new ones
+  - `null`: Same as default behavior (`"create_or_update"`)
 
 #### **2. Identifiers** *(required, object)*
 - **`external_id`** *(required, string)*: A unique external identifier for the sales record.

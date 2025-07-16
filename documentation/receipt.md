@@ -77,6 +77,11 @@
 #### **1. Meta Information (`meta`)** *(required, object)*
 - **`document_type`** *(required, string)*: Specifies the type of document. In this case, `ameax_receipt` represents a business document (invoice, offer, order, etc.).
 - **`schema_version`** *(required, string)*: Defines the version of the schema being used.
+- **`import_mode`** *(optional, string or null)*: Controls how records are processed during import. Valid values are:
+  - `"create_or_update"` (default): Creates new records or updates existing ones based on identifiers
+  - `"create_only"`: Only creates new records, ignores updates to existing ones
+  - `"update_only"`: Only updates existing records, ignores new ones
+  - `null`: Same as default behavior (`"create_or_update"`)
 
 #### **2. Basic Information**
 - **`type`** *(required, string)*: The type of receipt (e.g., invoice, order, offer).

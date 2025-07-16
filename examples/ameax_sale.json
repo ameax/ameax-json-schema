@@ -1,7 +1,8 @@
 {
     "meta": {
       "document_type": "ameax_sale",
-      "schema_version": "1.0"
+      "schema_version": "1.0",
+      "import_mode": null
     },
     "identifiers": {
       "external_id": "S234",
