@@ -126,7 +126,38 @@ Each item in the receipt includes:
 - **`tax_rate`** *(required, float)*: The applicable tax percentage.
 - **`tax_type`** *(required, string, allowed values: regular, reduced, exempt)*: The type of tax applied to the item.
 
-#### **6. Custom Data (`custom_data`)** *(nullable, object)*
+#### **6. Document PDF (`document_pdf`)** *(nullable, object)*
+Allows attaching the PDF document for this receipt. Two methods are supported:
+
+- **`type`** *(required, string, allowed values: base64, url)*: Method of providing the PDF document.
+  - `"base64"`: Direct embedding of the PDF as Base64-encoded string. **Note: Use this method only for PDFs smaller than 1MB to avoid performance issues.**
+  - `"url"`: External HTTPS URL to download the PDF.
+
+When `type` is `"base64"`:
+- **`content`** *(required, string)*: Base64-encoded PDF content.
+
+When `type` is `"url"`:
+- **`url`** *(required, string)*: HTTPS URL to download the PDF. Can include authentication parameters (e.g., pre-signed S3 URLs, API tokens as query parameters).
+
+**Examples:**
+
+Base64 method (for small PDFs < 1MB):
+```json
+"document_pdf": {
+  "type": "base64",
+  "content": "JVBERi0xLjQKJeLjz9MK..."
+}
+```
+
+URL method (recommended for larger files):
+```json
+"document_pdf": {
+  "type": "url",
+  "url": "https://api.example.com/documents/INV-2025-001.pdf?token=abc123"
+}
+```
+
+#### **7. Custom Data (`custom_data`)** *(nullable, object)*
 This section allows for additional data fields that may be required for specific use cases.
 
 - **`source_of_order`** *(nullable, string)*: Indicates the origin of the order (e.g., shop, marketplace, manual entry).

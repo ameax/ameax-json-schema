@@ -49,6 +49,10 @@
       "tax_type": "reduced"
     }
   ],
+  "document_pdf": {
+    "type": "url",
+    "url": "https://my-bucket.s3.eu-central-1.amazonaws.com/receipts/2025/INV-2025-001.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIOSFODNN7EXAMPLE%2F20250201%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Date=20250201T000000Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=abcdef1234567890"
+  },
   "custom_data": {
     "source_of_order": "shop",
     "what_ever": "x12"
