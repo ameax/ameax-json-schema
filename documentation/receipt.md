@@ -45,6 +45,7 @@
       "category": "Consulting",
       "description": "Consulting Services",
       "quantity": 1,
+      "uom": "hours",
       "price": 200,
       "discount": 20,
       "discount_type": "percent",
@@ -56,6 +57,7 @@
       "category": "Book",
       "description": "Book",
       "quantity": 2,
+      "uom": "pieces",
       "price": 20,
       "discount": 0.5,
       "discount_type": "amount",
@@ -120,6 +122,7 @@ Each item in the receipt includes:
 - **`category`** *(nullable, string)*: The category of the product or service.
 - **`description`** *(required, string)*: A brief description of the product or service.
 - **`quantity`** *(required, integer or float)*: The number of units of the item.
+- **`uom`** *(nullable, string)*: Unit of measurement (e.g., pieces, hours, kg, meters).
 - **`price`** *(required, float)*: The unit price of the item.
 - **`discount`** *(nullable, float)*: Discount applied to the item.
 - **`discount_type`** *(nullable, string, allowed values: percent, amount)*: Defines how the discount is applied.
