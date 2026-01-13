@@ -96,7 +96,11 @@
 - **`sale_external_id`** *(nullable, string)*: External identifier to link this receipt to a sales opportunity. **Note: When using this field, the corresponding sale record should be synchronized first to ensure proper linkage.**
 - **`date`** *(required, string, YYYY-MM-DD format)*: Date of the receipt creation.
 - **`customer_number`** *(required, string)*: Customer identifier to link the receipt to a specific customer.
-- **`status`** *(required, string, allowed values: draft, pending, completed, canceled)*: Current status of the receipt.
+- **`status`** *(required, string)*: Current status of the receipt. The allowed values depend on the receipt type:
+  - **Offer:** `draft`, `outstanding`, `accepted`, `obsolet`, `refused`
+  - **Order:** `draft`, `in_progress`, `completed`, `cancelled`
+  - **Invoice, Credit Note, Cancellation Document:** `draft`, `read_for_dispatch`, `on_hold`, `outstanding`, `completed`
+  - **Delivery Note:** `draft`, `outstanding`, `completed`
 - **`tax_mode`** *(required, string, allowed values: net, gross)*: Defines whether prices include tax or not.
 - **`tax_type`** *(required, string, allowed values: regular, reduced, exempt)*: Specifies the applicable tax type.
 
