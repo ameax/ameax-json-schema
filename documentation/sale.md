@@ -15,7 +15,8 @@
 {
   "meta": {
     "document_type": "ameax_sale",
-    "schema_version": "1.0"
+    "schema_version": "1.0",
+    "preserve_on_update": ["description", "rating"]
   },
   "identifiers": {
     "external_id": "S234",
@@ -90,6 +91,7 @@
   - `"create_only"`: Only creates new records, ignores updates to existing ones
   - `"update_only"`: Only updates existing records, ignores new ones
   - `null`: Same as default behavior (`"create_or_update"`)
+- **`preserve_on_update`** *(nullable, array of strings)*: List of field names to preserve (not overwrite) when updating an existing record. Listed fields become optional in validation and are excluded from the update. Has no effect on record creation.
 
 #### **2. Identifiers** *(required, object)*
 - **`external_id`** *(required, string)*: A unique external identifier for the sales record.
