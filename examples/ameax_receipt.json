@@ -14,6 +14,7 @@
   "sale_external_id": "OP123",
   "date": "2025-02-01",
   "customer_number": "12345",
+  "customer_external_id": "CUST-EXT-001",
   "status": "completed",
   "tax_mode": "net",
   "tax_type": "regular",
