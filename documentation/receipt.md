@@ -28,6 +28,7 @@
   "sale_external_id": "SALE-2025-042",
   "date": "2025-02-01",
   "customer_number": "12345",
+  "customer_external_id": "CUST-EXT-001",
   "status": "completed",
   "tax_mode": "net",
   "tax_type": "regular",
@@ -95,12 +96,17 @@
 - **`user_external_id`** *(nullable, string)*: External identifier of the user processing the receipt.
 - **`sale_external_id`** *(nullable, string)*: External identifier to link this receipt to a sales opportunity. **Note: When using this field, the corresponding sale record should be synchronized first to ensure proper linkage.**
 - **`date`** *(required, string, YYYY-MM-DD format)*: Date of the receipt creation.
-- **`customer_number`** *(required, string)*: Customer identifier to link the receipt to a specific customer.
+- **`customer_number`** *(optional, string or null)*: Customer number (`kundennr`) to link the receipt to a specific customer. **At least one of `customer_number` or `customer_external_id` must be provided.**
+- **`customer_external_id`** *(optional, string or null)*: External customer identifier (`customer_extern_id`) to link the receipt to a specific customer. Use this field when the customer was imported and has `kundennr` set to `0`. **At least one of `customer_number` or `customer_external_id` must be provided. When both are provided, `customer_number` takes precedence.**
 - **`status`** *(required, string)*: Current status of the receipt. The allowed values depend on the receipt type:
   - **Offer:** `draft`, `outstanding`, `accepted`, `obsolet`, `refused`
   - **Order:** `draft`, `in_progress`, `completed`, `cancelled`
-  - **Invoice, Credit Note, Cancellation Document:** `draft`, `read_for_dispatch`, `on_hold`, `outstanding`, `completed`
+  - **Invoice, Credit Note, Cancellation Document:** `draft`, `read_for_dispatch`, `on_hold`, `outstanding`, `outstanding_payment`, `completed`
   - **Delivery Note:** `draft`, `outstanding`, `completed`
+
+  > **Note:** The status `paused` exists in the schema enum but is currently not assigned to any receipt type. It will be rejected by server-side validation.
+
+  > **Deprecated:** The status `pending` is accepted for backward compatibility but will be automatically mapped to `in_progress` by the server before validation. New implementations should use the type-specific statuses listed above.
 - **`tax_mode`** *(required, string, allowed values: net, gross)*: Defines whether prices include tax or not.
 - **`tax_type`** *(required, string, allowed values: regular, reduced, exempt)*: Specifies the applicable tax type.
 
